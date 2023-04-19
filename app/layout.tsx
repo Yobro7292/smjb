@@ -12,7 +12,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="w-full min-w-full min-h-screen h-screen flex justify-center items-center">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
