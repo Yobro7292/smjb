@@ -94,7 +94,7 @@ export default function Home() {
                   );
                 })}
               </Carousel>
-              <div className="w-full flex justify-center items-center relative">
+              <div className="w-full flex flex-col justify-center items-center relative">
                 <div className="bg-white shadow-2xl rounded-lg sm:rounded-xl w-[90%] lg:w-[80%] xl:w-[60%] h-max -mt-8 absolute -top-14 sm:top-auto flex flex-col justify-start px-4 lg:px-10 py-2">
                   <p className="text-blue-500 flex items-center text-xs mt-4">
                     <Image
@@ -111,14 +111,14 @@ export default function Home() {
                   </p>
                   <div className="flex flex-col sm:flex-row justify-start items-start sm:items-center text-sm">
                     <span className=" mt-2">
-                      Bhojanshala In Mahuva &nbsp; &nbsp;
+                      Bhojanshala In Mahuva &nbsp; &nbsp; • &nbsp; &nbsp;
                     </span>
                     <div className="flex justify-center items-center">
                       {" "}
                       <span className="text-green-700 font-medium mt-2">
-                        Open Now
+                        Open Now &nbsp; &nbsp; •
                       </span>{" "}
-                      <span className="mt-2">&nbsp; &nbsp; 4.6</span>
+                      <span className="mt-2">&nbsp; &nbsp; 4.6 </span>
                       <div className="flex justify-center items-center">
                         <Image
                           src={star}
@@ -208,28 +208,30 @@ export default function Home() {
                       See on Map
                     </a>
                   </div>
+                  <div className="text-xs w-full flex justify-center items-center px-4 bg-neutral-200 py-3 rounded-lg text-neutral-700 mb-3 text-center font-medium leading-5">
+                    This website is currently under development We will launch
+                    the complete website soon.
+                    <br />
+                    <br />
+                    જય જિનેન્દ્ર, આપણા જૈન લોકોને ઉત્તમ સુવિધા મળી રહે તથા અહી
+                    કોઈ અગવડતા ન અનુભવાય તે માટે ડિજિટલ સ્વરૂપે આવવાનો અમારો આ
+                    નાનકડો પ્રયાસ છે.
+                    <br />
+                    આપના અભિપ્રાયો અમને ગૂગલ મેપ પર જરૂરથી જણાવશો જેથી કરી અમને
+                    પૂરતું પ્રોત્સાહન મળી શકે સાથો સાથ આપ અમારી વેબસાઇટ પરથી શું
+                    અપેક્ષા રાખો છો તે પણ જણાવશો.
+                    <br />
+                    Jay Jinendra, This is our small attempt to come in digital
+                    form so that our Jain people get excellent facilities and do
+                    not feel any discomfort here. Please tell us your opinions
+                    on google map so that we can get enough encouragement and
+                    also tell us what you expect from our website.
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </MantineProvider>
-        <div className="text-xs w-full max-w-full text-gray-500 flex justify-center items-center lg:bottom-5 px-6 -mt-8 sm:-mt-28 mb-6">
-          <div className="flex flex-col justify-center items-center bg-neutral-200 px-4 py-3 rounded-lg text-neutral-700 text-xs">
-            <ul>
-              <li className="text-lg text-center font-bold mb-1">
-                Jai Jinendra
-              </li>
-              <li className="text-neutral-500">
-                This website is currently under development We will launch the
-                complete website soon
-              </li>
-              <li className="text-neutral-500">
-                Please also let us know your thoughts and reviews on Google Maps
-                by then
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
       <Analytics />
     </>
