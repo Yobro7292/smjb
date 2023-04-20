@@ -163,7 +163,7 @@ export default function Home() {
                   <div className="w-full flex flex-col sm:flex-row justify-start  sm:justify-between items-start sm:items-center py-2 my-4">
                     <a
                       className="px-5 py-3 w-full sm:w-auto my-1 sm:my-0 rounded-lg text-blue-700 border-2 border-blue-700 text-xs sm:text-sm font-medium flex justify-center items-center"
-                      href="tel:+9102844222259"
+                      href="tel:02844222259"
                       target="_blank"
                     >
                       <Image
