@@ -87,7 +87,7 @@ export default function Home() {
                   return (
                     <Carousel.Slide
                       key={key}
-                      className="w-full h-full relative bg-gray-300 flex justify-center items-center"
+                      className="w-full h-full relative bg-gray-300 flex justify-center items-center bg-cover bg-center"
                     >
                       <Component source={element.src} placeholder={""} />
                     </Carousel.Slide>

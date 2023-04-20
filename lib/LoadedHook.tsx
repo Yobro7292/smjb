@@ -27,6 +27,8 @@ const Component = ({
       className="w-full h-full relative bg-gray-300 flex justify-center items-center bg-cover bg-center"
       style={{
         backgroundImage: `url(${loaded || placeholder})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     ></div>
   );
