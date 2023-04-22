@@ -329,7 +329,7 @@ export default function Home() {
           </div>
         </MantineProvider>
       </div>
-      {/* <Analytics /> */}
+      <Analytics />
     </>
   );
 }
