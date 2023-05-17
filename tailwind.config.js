@@ -11,7 +11,8 @@ module.exports = {
         brown: "#8e5e48",
         "dark-brown": "#6e422d",
         "light-brown": "#e0bead",
-        textPrimary: "#CDA274"
+        textPrimary: "#CDA274",
+        textDarkPrimary: "#6D4E2D"
       },
     },
   },
