@@ -17,13 +17,14 @@ const poppins = Poppins({
 });
 const useStyles = createStyles((theme) => ({
   root: {
-    backgroundColor: "#11284b",
+    backgroundColor: "#553e25",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundImage: `linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #553e25 80%), url(${heroImg.src})`,
-    paddingTop: `calc(${theme.spacing.xl} * 3)`,
+    backgroundImage: `linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #553e25 90%), url(${heroImg.src})`,
+    paddingTop: `calc(${theme.spacing.xl} * 4)`,
     paddingBottom: `calc(${theme.spacing.xl} * 3)`,
     borderRadius: "18px",
+    height: `calc(100vh - 20vh)`
   },
 
   inner: {
@@ -90,11 +91,12 @@ const useStyles = createStyles((theme) => ({
 export function HeroImageRight() {
   const { classes } = useStyles();
   return (
+    <div className="min-h-[90vh] w-full bg-transparent">
     <div className={classes.root}>
       <Container size="lg">
         <div className={classes.inner}>
           <div className={classes.content}>
-            <Title className={classes.title}>
+            <Title className={`${classes.title} ${poppins.className}`}>
               A Sanctuary For
               <br />
               The{" "}
@@ -102,7 +104,7 @@ export function HeroImageRight() {
                 component="span"
                 inherit
                 variant="white"
-                className="text-white"
+                className={`text-white ${poppins.className}`}
               >
                 {" "}Soul
               </Text>{" "}
@@ -127,6 +129,7 @@ export function HeroImageRight() {
           </div>
         </div>
       </Container>
+    </div>
     </div>
   );
 }

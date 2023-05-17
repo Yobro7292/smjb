@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -11,7 +11,7 @@ module.exports = {
         brown: "#8e5e48",
         "dark-brown": "#6e422d",
         "light-brown": "#e0bead",
-        textPrimary: "#292F36"
+        textPrimary: "#CDA274"
       },
     },
   },
