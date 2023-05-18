@@ -7,7 +7,7 @@ import { ImageCard } from "../common/ImageCard";
 import Divider from "../common/Divider";
 const Service = () => {
   return (
-    <Container size="xl">
+    <Container size="xl" className="my-12">
       <div className="flex flex-col justify-center items-center">
       <Divider title={"Services"} varient={"light"} />
         <SimpleGrid

@@ -10,12 +10,19 @@
     width: 75%; 						/* divider width */
     align-items: center;				/* spacing above/below */
 }
+@media screen {
+    @media (max-width: 47.9375em){
+        .divider{
+            width: 100%;
+        }
+    }
+}
 .divider span { display: table-cell; position: relative; }
 .divider span:first-child, .divider span:last-child {
     width: 50%;
-    top: 22px;							/* adjust vertical align */
+    top: 18px;							/* adjust vertical align */
     -moz-background-size: 100% 2px; 	/* line width */
-    background-size: 100% 2px; 			/* line width */
+    background-size: 100% 2.6px; 			/* line width */
     background-position: 0 0, 0 100%;
     background-repeat: no-repeat;
 }

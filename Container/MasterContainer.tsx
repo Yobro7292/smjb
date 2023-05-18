@@ -14,7 +14,13 @@ const poppins = Poppins({
 
 const MasterContainer = ({children}:PropsWithChildren) => {
   return (
-    <MantineProvider theme={{ fontFamily: 'poppins' }} withGlobalStyles withNormalizeCSS> 
+    <MantineProvider theme={{ fontFamily: 'poppins',breakpoints: {
+      xs: '30em',
+      sm: '48em',
+      md: '64em',
+      lg: '74em',
+      xl: '90em',
+    }, }} withGlobalStyles withNormalizeCSS> 
     <Container size="xl" className={`${poppins.className}`} style={{ backgroundImage: `url(${background.src})`, backgroundSize: "cover"}}>
         <Navbar links={navBarLinks.links} poppins={poppins} />
         {children}

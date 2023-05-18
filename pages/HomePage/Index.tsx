@@ -1,13 +1,15 @@
 import { HeroImageRight } from "@/components/Hero/Index"
 import Service from "@/components/Service/Index"
-import Trustee from "@/components/Trustees/Index"
+import Management from "@/components/Management/Index"
+import Testimonials from "@/components/Testimonials/Index"
 
 const HomePage = () => {
   return (
     <>
     <HeroImageRight />
     <Service />
-    <Trustee />
+    <Management />
+    <Testimonials />
     </>
   )
 }

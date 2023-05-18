@@ -17,14 +17,16 @@ const poppins = Poppins({
 });
 const useStyles = createStyles((theme) => ({
   root: {
-    backgroundColor: "#553e25",
+    backgroundColor: "transparent",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundImage: `linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #553e25 90%), url(${heroImg.src})`,
     paddingTop: `calc(${theme.spacing.xl} * 4)`,
     paddingBottom: `calc(${theme.spacing.xl} * 3)`,
     borderRadius: "18px",
-    height: `calc(100vh - 20vh)`
+    [theme.fn.smallerThan("sm")]: {
+      backgroundImage: "none",
+    },
   },
 
   inner: {
@@ -34,11 +36,8 @@ const useStyles = createStyles((theme) => ({
     [theme.fn.smallerThan("md")]: {
       flexDirection: "column",
     },
-  },
-
-  image: {
-    [theme.fn.smallerThan("md")]: {
-      display: "none",
+    [theme.fn.smallerThan("sm")]: {
+      justifyContent: "center",
     },
   },
 
@@ -49,6 +48,14 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan("md")]: {
       marginRight: 0,
+    },
+
+    [theme.fn.smallerThan("sm")]: {
+      display: "flex",
+      flexDirection: "column",
+      flexWrap: "nowrap",
+      alignItems: "start",
+      textAlign: "left",
     },
   },
 
@@ -75,15 +82,8 @@ const useStyles = createStyles((theme) => ({
     [theme.fn.smallerThan("md")]: {
       maxWidth: "100%",
     },
-  },
-
-  control: {
-    paddingLeft: rem(50),
-    paddingRight: rem(50),
-    fontSize: rem(22),
-
-    [theme.fn.smallerThan("md")]: {
-      width: "100%",
+    [theme.fn.smallerThan("sm")]: {
+      color: theme.black,
     },
   },
 }));
@@ -91,45 +91,44 @@ const useStyles = createStyles((theme) => ({
 export function HeroImageRight() {
   const { classes } = useStyles();
   return (
-    <div className="min-h-[90vh] w-full bg-transparent">
-    <div className={classes.root}>
-      <Container size="lg">
-        <div className={classes.inner}>
-          <div className={classes.content}>
-            <Title className={`${classes.title} ${poppins.className}`}>
-              A Sanctuary For
-              <br />
-              The{" "}
+    <div className="mt-6 mb-12 w-full bg-transparent">
+      <div className={classes.root}>
+        <Container size="lg">
+          <div className={classes.inner}>
+            <div className={classes.content}>
+              <Title className={`${classes.title} ${poppins.className}`}>
+                A Sanctuary For The{" "}
+                <Text
+                  component="span"
+                  inherit
+                  variant="white"
+                  className={`text-textPrimary md:text-white ${poppins.className}`}
+                >
+                  {" "}
+                  Soul
+                </Text>{" "}
+              </Title>
+
               <Text
-                component="span"
-                inherit
-                variant="white"
-                className={`text-white ${poppins.className}`}
+                className={`${classes.description} ${poppins.className}`}
+                mt={38}
               >
-                {" "}Soul
-              </Text>{" "}
-            </Title>
+                Welcome to Shree Mahuva Jain Bhojanshala A place where every
+                guest is family
+              </Text>
 
-            <Text
-              className={`${classes.description} ${poppins.className}`}
-              mt={38}
-            >
-              Welcome to Shree Mahuva Jain Bhojanshala A place where every guest
-              is family
-            </Text>
-
-            <Button
-              radius="md"
-              size="md"
-              rightIcon={<HiOutlineArrowNarrowRight />}
-              className={`bg-[#eec9a2] text-[#6d4e2d] mt-8 text-sm font-semibold hover:bg-[#eec9a2] ${poppins.className}`}
-            >
-              Book Your Room
-            </Button>
+              <Button
+                radius="md"
+                size="md"
+                rightIcon={<HiOutlineArrowNarrowRight />}
+                className={`bg-[#eec9a2] text-[#6d4e2d] mt-8 text-sm font-semibold hover:bg-[#eec9a2] shadow-md  ${poppins.className}`}
+              >
+                Explore Services{" "}
+              </Button>
+            </div>
           </div>
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </div>
     </div>
   );
 }

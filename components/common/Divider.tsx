@@ -8,7 +8,7 @@ const Divider = ({title, varient}:DividerProps) => {
   return (
     <div className={`divider ${varient === "dark" ? 'divider-dark' : 'divider-light'}`}>
         <span></span>{" "}
-        <Title order={1} px={"lg"} className={`${varient === "dark" ? 'text-textDarkPrimary' : 'text-textPrimary'}`}>
+        <Title order={2} px={"lg"} className={`${varient === "dark" ? 'text-textDarkPrimary' : 'text-textPrimary'}`}>
          {title}
         </Title>
         <span></span>
