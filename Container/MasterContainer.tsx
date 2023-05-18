@@ -4,9 +4,11 @@ import { Poppins } from "next/font/google";
 import { Container} from "@mantine/core";
 import Navbar from "@/features/Navbar";
 import { navBarLinks } from "../lib/data/navbarLinks";
+import { footerLinksData } from "../lib/data/footerLinks";
 import background from '../assets/images/background.png'
 import { PropsWithChildren } from "react";
 import { MantineProvider} from '@mantine/core';
+import { FooterLinks } from "@/features/Footer/Index";
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
@@ -24,6 +26,7 @@ const MasterContainer = ({children}:PropsWithChildren) => {
     <Container size="xl" className={`${poppins.className}`} style={{ backgroundImage: `url(${background.src})`, backgroundSize: "cover"}}>
         <Navbar links={navBarLinks.links} poppins={poppins} />
         {children}
+        <FooterLinks data={footerLinksData} />
       </Container>
       </MantineProvider>
   )
