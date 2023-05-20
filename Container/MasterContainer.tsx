@@ -21,9 +21,9 @@ const MasterContainer = ({children}:PropsWithChildren) => {
       sm: '48em',
       md: '64em',
       lg: '74em',
-      xl: '90em',
+      xl: '98em',
     }, }} withGlobalStyles withNormalizeCSS> 
-    <Container size="xl" className={`${poppins.className}`} sx={(theme)=>({ '@media (max-width: 48em)': {
+    <Container size={"xl"} className={`${poppins.className}`} sx={(theme)=>({ '@media (max-width: 48em)': {
           backgroundImage: "none !important"
         },})} style={{ backgroundImage: `url(${background.src})`, backgroundSize: "cover"}}>
         <Navbar links={navBarLinks.links} poppins={poppins} />

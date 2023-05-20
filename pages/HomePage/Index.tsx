@@ -3,6 +3,7 @@ import Service from "@/components/Service/Index"
 import Management from "@/components/Management/Index"
 import Testimonials from "@/components/Testimonials/Index"
 import Counter from "@/components/Counter/Index"
+import { FaqSimple } from "@/components/FAQ/Index"
 const HomePage = () => {
   return (
     <>
@@ -11,6 +12,7 @@ const HomePage = () => {
     <Management />
     <Testimonials />
     <Counter />
+    <FaqSimple />
     </>
   )
 }

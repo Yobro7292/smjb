@@ -9,7 +9,7 @@ const Counter = () => {
       <SimpleGrid
         cols={7}
         spacing="lg"
-        className="justify-items-center align-middle items-center justify-center py-20"
+        className="justify-items-center align-middle items-center justify-center py-10"
       >
         <div></div>
         <Group>

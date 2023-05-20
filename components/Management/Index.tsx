@@ -23,7 +23,7 @@ const Management = () => {
   const { classes } = useStyles();
 
   return (
-    <div className={`${classes.root} my-12`}>
+    <div className={`${classes.root} `}>
       <Divider title={"Management"} varient={"dark"} />
       <SimpleGrid cols={6} spacing="xs" breakpoints={[{ maxWidth: 'sm', cols: 2 }, { maxWidth: 'lg', cols: 3 }]} className="mt-6 w-full px-3 sm:px-4 lg:px-8">
         {managementPeoples.map((people, i)=>(

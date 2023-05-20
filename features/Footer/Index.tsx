@@ -5,15 +5,15 @@ import Logo from '@/assets/svg/logo.svg'
 
 const useStyles = createStyles((theme) => ({
   footer: {
-    marginTop: rem(120),
-    paddingTop: `calc(${theme.spacing.xl} * 2)`,
+    marginTop: rem(0),
+    paddingTop: 0,
     paddingBottom: `calc(${theme.spacing.xl} * 2)`,
     backgroundColor: "transparent",
    
   },
 
   logo: {
-    maxWidth: rem(200),
+    maxWidth: rem(300),
 
     [theme.fn.smallerThan('sm')]: {
       display: 'flex',
@@ -130,7 +130,7 @@ export function FooterLinks({ data }: FooterLinksProps) {
 
   return (
     <footer className={classes.footer}>
-      <Container className={classes.inner}>
+      <Container className={classes.inner} size={"lg"}>
         <div className={classes.logo}>
         <Image src={Logo.src} height={100} width={100} alt="logo-icon" className='py-4' />
           <Text size="xs" color="dimmed" className={classes.description}>

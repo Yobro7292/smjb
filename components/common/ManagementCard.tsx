@@ -20,6 +20,7 @@ const useStyles = createStyles((theme) => ({
     display: "block",
     marginTop: theme.spacing.md,
     marginBottom: rem(5),
+    fontSize:"14px"
   },
 
   action: {
@@ -66,7 +67,8 @@ export function ManagementCard({
       {...others}
     >
       <Card.Section className="flex justify-center items-center">
-        <Image width={100} src={image} height={180} alt={title} className="object-top w-full" />
+        {/* <Image width={100} src={image} height={50} alt={title} className="object-top w-auto max-h-[10rem]" /> */}
+        <div className="w-full h-[10rem] bg-cover bg-top" style={{backgroundImage: `url(${image})`}} ></div>
       </Card.Section>
 
       <Badge
