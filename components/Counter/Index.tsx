@@ -1,6 +1,7 @@
 "use client";
 
-import { Divider, Group, SimpleGrid, Text } from "@mantine/core";
+import { Divider, Group, SimpleGrid } from "@mantine/core";
+
 
 const Counter = () => {
   return (
@@ -14,28 +15,33 @@ const Counter = () => {
         <Group>
           <div className="flex flex-col items-center">
             {" "}
-            <p className="text-4xl sm:text-4xl font-bold text-textPrimary">12</p>
+            <p className="text-4xl sm:text-4xl font-bold text-textPrimary">
+              12
+            </p>
             <p className="text-sm sm:text-sm">Years</p>
           </div>
         </Group>
-          <Divider size="sm" orientation="vertical" color="#d6bf9f" />
+        <Divider size="sm" orientation="vertical" color="#d6bf9f" />
         <Group>
           <div className="flex flex-col items-center">
             {" "}
-            <p className="text-4xl sm:text-4xl font-bold text-textPrimary">16</p>
+            <p className="text-4xl sm:text-4xl font-bold text-textPrimary">
+              16
+            </p>
             <p className="text-sm sm:text-sm">Staff</p>
           </div>
         </Group>
-          <Divider size="sm" orientation="vertical" color="#d6bf9f" />
+        <Divider size="sm" orientation="vertical" color="#d6bf9f" />
         <Group>
           <div className="flex flex-col items-center">
             {" "}
-            <p className="text-4xl sm:text-4xl font-bold text-textPrimary">152</p>
+            <p className="text-4xl sm:text-4xl font-bold text-textPrimary">
+              152
+            </p>
             <p className="text-sm sm:text-sm">Ratting</p>
           </div>
         </Group>
         <div></div>
-          {/* <Divider size="sm" orientation="vertical" color="#d6bf9f" /> */}
       </SimpleGrid>
     </div>
   );

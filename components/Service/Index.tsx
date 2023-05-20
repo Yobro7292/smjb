@@ -3,7 +3,7 @@ import {
   Container,
   SimpleGrid,
 } from "@mantine/core";
-import { ImageCard } from "../common/ImageCard";
+import { ServiceCard } from "../common/ServiceCards";
 import Divider from "../common/Divider";
 const Service = () => {
   return (
@@ -21,7 +21,7 @@ const Service = () => {
           w={"100%"}
         >
           {/* <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={true} /> */}
-          <ImageCard
+          <ServiceCard
             link={""}
             image={
               "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -30,7 +30,7 @@ const Service = () => {
             author={"AC/Non AC Rooms "}
             buttonTitle="Choose Room"
           />
-          <ImageCard
+          <ServiceCard
             link={""}
             image={
               "https://images.unsplash.com/photo-1680993032090-1ef7ea9b51e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
@@ -39,7 +39,7 @@ const Service = () => {
             author={"Navkarsi, Bhojan and Chauvihar"}
             buttonTitle="Create A Menu"
           />
-          <ImageCard
+          <ServiceCard
             link={""}
             image={
               "https://img.freepik.com/free-photo/beautifully-decorated-venue-interior-wedding_181624-58530.jpg?w=1060&t=st=1684316948~exp=1684317548~hmac=ba84148182692d00bd71ae9454f14e83bf3498bc259ec13e3b797386bd137b82"

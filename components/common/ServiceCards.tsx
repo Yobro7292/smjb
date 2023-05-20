@@ -73,7 +73,7 @@ interface ImageCardProps {
   buttonTitle: string;
 }
 
-export function ImageCard({
+export function ServiceCard({
   image,
   title,
   author,
