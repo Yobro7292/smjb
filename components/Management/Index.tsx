@@ -24,7 +24,7 @@ const Management = () => {
 
   return (
     <div className={`${classes.root} `}>
-      <Divider title={"Management"} varient={"dark"} />
+      <Divider title={"Management"} varient={"dark"} description="Management Group of Shree Mahuva Jain Bhojanshala" />
       <SimpleGrid cols={6} spacing="xs" breakpoints={[{ maxWidth: 'sm', cols: 2 }, { maxWidth: 'lg', cols: 3 }]} className="mt-6 w-full px-3 sm:px-4 lg:px-8">
         {managementPeoples.map((people, i)=>(
           <ManagementCard key={i} image={people.image} title={people.title} description={people.description} rating={people.rating} />

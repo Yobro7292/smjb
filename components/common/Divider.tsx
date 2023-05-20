@@ -2,9 +2,10 @@ import { Title } from "@mantine/core";
 
 interface DividerProps {
     title: string;
+    description: string;
     varient: "dark" | "light"
 }
-const Divider = ({title, varient}:DividerProps) => {
+const Divider = ({title, varient, description}:DividerProps) => {
   return (
 <>
     <div className={`divider ${varient === "dark" ? 'divider-dark' : 'divider-light'}`}>
@@ -14,8 +15,7 @@ const Divider = ({title, varient}:DividerProps) => {
         </Title>
         <span></span>
     </div>
-    <hr className="h-[2px] w-[80%] sm:w-[60%] lg:w-[20%] my-2 bg-gray-200 border-0" />
-    <p className="text-lg font-light text-gray-500">See what people thinks about</p>
+    <p className="text-lg font-light text-gray-500 mt-2 mx-4 text-center">{description}</p>
 </>
   )
 }

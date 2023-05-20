@@ -1,47 +1,66 @@
 "use client";
 
-import { Divider, Group, SimpleGrid } from "@mantine/core";
+import { Divider, Group, SimpleGrid, createStyles } from "@mantine/core";
+import { stats } from '../../lib/data/states'
 
+const useStyles = createStyles((theme) => ({
+  root: {
+    backgroundColor: "#F4F0EC",
+    paddingTop: `calc(${theme.spacing.xl} * 2)`,
+    paddingBottom: `calc(${theme.spacing.xl} * 2 )`,
+    borderRadius: "18px",
+    marginBottom: `calc(${theme.spacing.xl} * 3)`,
+    marginTop: `calc(${theme.spacing.xl} * 2)`,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+  },
+}));
 
 const Counter = () => {
+  const { classes } = useStyles();
+
   return (
-    <div className="w-full my-12 bg-[#F4F0EC]">
+    <div className={classes.root}>
       <SimpleGrid
         cols={7}
-        spacing="lg"
-        className="justify-items-center align-middle items-center justify-center py-10"
+        verticalSpacing={0}
+        className="hidden sm:grid justify-items-center align-middle items-center justify-center"
       >
-        <div></div>
+        {stats.map((item)=>(
+          <>
         <Group>
           <div className="flex flex-col items-center">
             {" "}
-            <p className="text-4xl sm:text-4xl font-bold text-textPrimary">
-              12
+            <p className="text-lg sm:text-4xl font-bold text-textPrimary">
+              {item.value}
             </p>
-            <p className="text-sm sm:text-sm">Years</p>
+            <p className="text-xs sm:text-sm">{item.title}</p>
           </div>
         </Group>
         <Divider size="sm" orientation="vertical" color="#d6bf9f" />
+        </>
+        ))}
+      </SimpleGrid>
+      <SimpleGrid
+        cols={2}
+        verticalSpacing="lg"
+        className="grid sm:hidden justify-items-center align-middle items-center justify-between w-full"
+      >
+        {stats.map((item)=>(
+          <>
         <Group>
           <div className="flex flex-col items-center">
             {" "}
-            <p className="text-4xl sm:text-4xl font-bold text-textPrimary">
-              16
+            <p className="text-xl sm:text-4xl font-bold text-textPrimary">
+              {item.value}
             </p>
-            <p className="text-sm sm:text-sm">Staff</p>
+            <p className="text-sm sm:text-sm">{item.title}</p>
           </div>
         </Group>
-        <Divider size="sm" orientation="vertical" color="#d6bf9f" />
-        <Group>
-          <div className="flex flex-col items-center">
-            {" "}
-            <p className="text-4xl sm:text-4xl font-bold text-textPrimary">
-              152
-            </p>
-            <p className="text-sm sm:text-sm">Ratting</p>
-          </div>
-        </Group>
-        <div></div>
+        </>
+        ))}
       </SimpleGrid>
     </div>
   );
