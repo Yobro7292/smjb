@@ -2,6 +2,8 @@
 
 import { Divider, Group, SimpleGrid, createStyles } from "@mantine/core";
 import { stats } from '../../lib/data/states'
+import DesktopStats from "./DesktopStats";
+import MobileStats from "./MobileStats";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -18,50 +20,21 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+
+export interface StatsProps {
+  stats: {
+    title: string;
+    value: string;
+  }[];
+}
+
 const Counter = () => {
   const { classes } = useStyles();
 
   return (
     <div className={classes.root}>
-      <SimpleGrid
-        cols={7}
-        verticalSpacing={0}
-        className="hidden sm:grid justify-items-center align-middle items-center justify-center"
-      >
-        {stats.map((item)=>(
-          <>
-        <Group>
-          <div className="flex flex-col items-center">
-            {" "}
-            <p className="text-lg sm:text-4xl font-bold text-textPrimary">
-              {item.value}
-            </p>
-            <p className="text-xs sm:text-sm">{item.title}</p>
-          </div>
-        </Group>
-        <Divider size="sm" orientation="vertical" color="#d6bf9f" />
-        </>
-        ))}
-      </SimpleGrid>
-      <SimpleGrid
-        cols={2}
-        verticalSpacing="lg"
-        className="grid sm:hidden justify-items-center align-middle items-center justify-between w-full"
-      >
-        {stats.map((item)=>(
-          <>
-        <Group>
-          <div className="flex flex-col items-center">
-            {" "}
-            <p className="text-xl sm:text-4xl font-bold text-textPrimary">
-              {item.value}
-            </p>
-            <p className="text-sm sm:text-sm">{item.title}</p>
-          </div>
-        </Group>
-        </>
-        ))}
-      </SimpleGrid>
+      <DesktopStats stats={stats} />
+      <MobileStats stats={stats} />
     </div>
   );
 };

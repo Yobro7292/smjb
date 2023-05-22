@@ -9,12 +9,7 @@ import {
 } from "@mantine/core";
 import heroImg from "../../assets/images/hero.jpg";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { Poppins } from "next/font/google";
 
-const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-});
 const useStyles = createStyles((theme) => ({
   root: {
     backgroundColor: "transparent",
@@ -96,13 +91,13 @@ export function HeroImageRight() {
         <Container size="lg">
           <div className={classes.inner}>
             <div className={classes.content}>
-              <Title className={`${classes.title} ${poppins.className}`}>
+              <Title className={`${classes.title}`}>
                 A Sanctuary For The{" "}
                 <Text
                   component="span"
                   inherit
                   variant="white"
-                  className={`text-textPrimary md:text-white ${poppins.className}`}
+                  className={`text-textPrimary md:text-white`}
                 >
                   {" "}
                   Soul
@@ -110,7 +105,7 @@ export function HeroImageRight() {
               </Title>
 
               <Text
-                className={`${classes.description} ${poppins.className}`}
+                className={`${classes.description}`}
                 mt={38}
               >
                 Welcome to Shree Mahuva Jain Bhojanshala A place where every
@@ -121,7 +116,7 @@ export function HeroImageRight() {
                 radius="md"
                 size="md"
                 rightIcon={<HiOutlineArrowNarrowRight />}
-                className={`bg-[#eec9a2] text-[#6d4e2d] mt-8 text-sm font-semibold hover:bg-[#eec9a2] shadow-md  ${poppins.className}`}
+                className={`bg-[#eec9a2] text-[#6d4e2d] mt-8 text-sm font-semibold hover:bg-[#eec9a2] shadow-md`}
               >
                 Explore Services{" "}
               </Button>

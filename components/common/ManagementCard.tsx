@@ -1,6 +1,4 @@
-import { IconBookmark, IconHeart, IconShare } from "@tabler/icons-react";
 import { Card, Text, Badge, createStyles, rem } from "@mantine/core";
-import Image from "next/image";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -57,7 +55,7 @@ export function ManagementCard({
   ...others
 }: ArticleCardProps &
   Omit<React.ComponentPropsWithoutRef<"div">, keyof ArticleCardProps>) {
-  const { classes, cx, theme } = useStyles();
+  const { classes, cx } = useStyles();
 
   return (
     <Card

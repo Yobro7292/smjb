@@ -2,7 +2,6 @@
 import { createStyles, Header, Menu, Group, Center, Burger, rem } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Logo from '@/assets/svg/logo.svg'
-import { NextFont } from 'next/dist/compiled/@next/font';
 import { BiChevronDown } from "react-icons/bi";
 import Image from 'next/image';
 
@@ -51,16 +50,15 @@ const useStyles = createStyles((theme) => ({
 
 interface HeaderSearchProps {
   links: { link: string; label: string; links?: { link: string; label: string }[] }[];
-  poppins: NextFont;
 }
 
-const Navbar = ({ links, poppins }: HeaderSearchProps)=>{
+const Navbar = ({ links}: HeaderSearchProps)=>{
   const [opened, { toggle }] = useDisclosure(false);
   const { classes } = useStyles();
 
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link} className={poppins.className}>{item.label}</Menu.Item>
+      <Menu.Item key={item.link}>{item.label}</Menu.Item>
     ));
 
     if (menuItems) {
@@ -69,11 +67,11 @@ const Navbar = ({ links, poppins }: HeaderSearchProps)=>{
           <Menu.Target>
             <a
               href={link.link}
-              className={`${classes.link} ${poppins.className}`}
+              className={classes.link}
               onClick={(event) => event.preventDefault()}
             >
               <Center>
-                <span className={`${classes.linkLabel} ${poppins.className}`}>{link.label}</span>
+                <span className={classes.linkLabel}>{link.label}</span>
                 <BiChevronDown />
               </Center>
             </a>
@@ -87,7 +85,7 @@ const Navbar = ({ links, poppins }: HeaderSearchProps)=>{
       <a
         key={link.label}
         href={link.link}
-        className={`${classes.link} ${poppins.className}`}
+        className={classes.link}
         onClick={(event) => event.preventDefault()}
       >
         {link.label}
