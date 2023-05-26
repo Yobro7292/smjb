@@ -9,7 +9,7 @@ const DesktopStats = ({ stats }: StatsProps) => {
       className="hidden sm:grid justify-items-center align-middle items-center justify-center"
     >
       {stats.map((item, i) => (
-        <div key={i}>
+        <>
           <Group>
             <div className="flex flex-col items-center">
               {" "}
@@ -20,7 +20,7 @@ const DesktopStats = ({ stats }: StatsProps) => {
             </div>
           </Group>
           <Divider size="sm" orientation="vertical" color="#d6bf9f" />
-        </div>
+          </>
       ))}
     </SimpleGrid>
   );

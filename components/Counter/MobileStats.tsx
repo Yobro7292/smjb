@@ -14,7 +14,7 @@ const MobileStats = ({ stats }: StatsProps) => {
           <Group key={i}>
             <div className="flex flex-col items-center">
               {" "}
-              <p className="text-xl sm:text-4xl font-bold text-textPrimary">
+              <p className="text-3xl font-bold text-textPrimary">
                 {item.value}
               </p>
               <p className="text-sm sm:text-sm">{item.title}</p>

@@ -1,45 +1,63 @@
-"use client"
-import { createStyles, Header, Menu, Group, Center, Burger, rem } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import Logo from '@/assets/svg/logo.svg'
+"use client";
+import {
+  createStyles,
+  Header,
+  Menu,
+  Group,
+  Center,
+  Burger,
+  rem,
+  Drawer,
+} from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import Logo from "@/assets/svg/logo.svg";
 import { BiChevronDown } from "react-icons/bi";
-import Image from 'next/image';
+import Image from "next/image";
+import NavDrawer from "@/components/NavDrawer/Index";
+import { ReactNode } from "react";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   inner: {
     height: rem(56),
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    background: 'transparent'
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    background: "transparent",
   },
 
   links: {
-    [theme.fn.smallerThan('sm')]: {
-      display: 'none',
+    [theme.fn.smallerThan("sm")]: {
+      display: "none",
     },
     backgroundColor: "white",
-    padding: "10px 0px"
+    padding: "10px 0px",
   },
 
   burger: {
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
+    [theme.fn.largerThan("sm")]: {
+      display: "none",
     },
   },
 
   link: {
-    display: 'block',
+    display: "block",
     lineHeight: 1,
     padding: `${rem(8)} ${rem(12)}`,
     borderRadius: theme.radius.sm,
-    textDecoration: 'none',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+    textDecoration: "none",
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[0]
+        : theme.colors.gray[7],
     fontSize: theme.fontSizes.sm,
     fontWeight: 500,
 
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    "&:hover": {
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[6]
+          : theme.colors.gray[0],
     },
   },
 
@@ -48,22 +66,34 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface HeaderSearchProps {
-  links: { link: string; label: string; links?: { link: string; label: string }[] }[];
+export interface HeaderSearchProps {
+  links: {
+    link: string;
+    label: string;
+    icon?: ReactNode;
+    links?: { link: string; label: string;  icon?: ReactNode; }[];
+  }[];
 }
 
-const Navbar = ({ links}: HeaderSearchProps)=>{
+const Navbar = ({ links }: HeaderSearchProps) => {
   const [opened, { toggle }] = useDisclosure(false);
   const { classes } = useStyles();
 
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
+      <Link key={item.link} href={item.link}>
+      <Menu.Item>{item.label}</Menu.Item>
+      </Link>
     ));
 
     if (menuItems) {
       return (
-        <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
+        <Menu
+          key={link.label}
+          trigger="hover"
+          transitionProps={{ exitDuration: 0 }}
+          withinPortal
+        >
           <Menu.Target>
             <a
               href={link.link}
@@ -94,15 +124,47 @@ const Navbar = ({ links}: HeaderSearchProps)=>{
   });
 
   return (
-    <Header height={56} mb={50} style={{background: "transparent", paddingTop: "25px"}} withBorder={false}>
-        <div className={`${classes.inner} bg-transparent`}>
-        <Image src={Logo.src} height={100} width={100} alt="logo-icon" className='py-4' />
-          <Group spacing={5} className={classes.links}>
-            {items}
-          </Group>
-          <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+    <Header
+      height={56}
+      mb={50}
+      style={{ background: "transparent", paddingTop: "25px" }}
+      withBorder={false}
+    >
+      <div className={`${classes.inner} bg-transparent`}>
+        <Link href={"/"}> 
+        <Image
+          src={Logo.src}
+          height={100}
+          width={100}
+          alt="logo-icon"
+          className="py-4"
+        />
+        </Link>
+
+        <Group spacing={5} className={classes.links}>
+          {items}
+        </Group>
+ 
+        <div className="w-full flex sm:hidden" style={{ justifyContent: "end" }}>
+          <Burger
+            opened={opened}
+            onClick={toggle}
+            className={classes.burger}
+            size="sm"
+          />
+          <Drawer
+            opened={opened}
+            onClose={toggle}
+            title="Welcome to SMJB"
+            overlayProps={{ opacity: 0.5, blur: 4 }}
+            size={"sm"}
+            position="right"
+          >
+            <NavDrawer links={links} />
+          </Drawer>
         </div>
+      </div>
     </Header>
   );
-}
+};
 export default Navbar;
