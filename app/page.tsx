@@ -228,7 +228,7 @@ export default function Home() {
               </div>
               {/* adding onfo  */}
               <div className="flex flex-col justify-start items-center p-4 bg-white mb-5 mt-[22rem] sm:mt-[10rem]">
-                <div className="w-full sm:w-[80%] lg:w-[60%] py-4 sm:py-8 px-6 sm:px-8 shadow-lg rounded-lg my-3 flex flex-col justify-between items-start">
+{/*                 <div className="w-full sm:w-[80%] lg:w-[60%] py-4 sm:py-8 px-6 sm:px-8 shadow-lg rounded-lg my-3 flex flex-col justify-between items-start">
                   <p className="text-lg font-medium text-black text-left mb-3">
                     Please provide your feedback
                   </p>
@@ -302,7 +302,7 @@ export default function Home() {
                   >
                     Submit
                   </button>
-                </div>
+                </div> */}
                 <div
                   className={`text-xs w-full flex justify-center items-center px-4 bg-neutral-200 py-3 rounded-lg text-neutral-700 mb-3 text-center font-medium leading-5 mt-4`}
                 >
