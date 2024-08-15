@@ -1,7 +1,7 @@
 "use client";
 import { Analytics } from "@vercel/analytics/react";
 import { Poppins } from "next/font/google";
-import { MantineProvider } from "@mantine/core";
+import { Box, MantineProvider } from "@mantine/core";
 import { Notifications, notifications } from "@mantine/notifications";
 import { useRef, useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
@@ -66,7 +66,7 @@ export default function Home() {
               <Carousel
                 align={"start"}
                 loop
-                draggable={false}
+                draggable={true}
                 plugins={[autoplay.current]}
                 className="h-full w-full"
                 slideSize="100%"
@@ -163,10 +163,10 @@ export default function Home() {
                           loading="lazy"
                         />
                       </div>
-                      <span className=" sm:mt-2"> &nbsp; (137)</span>
+                      <span className=" sm:mt-2"> &nbsp; (201)</span>
                     </div>
                   </div>
-                  <div className="flex flex-col justify-center items-center w-full">
+                  <div className="flex flex-col justify-center items-center w-full mt-6">
                     <div className="w-full flex flex-col sm:flex-row justify-start  sm:justify-between items-start sm:items-center py-2 my-4">
                       <a
                         className="px-5 py-3 w-full sm:w-auto my-1 sm:my-0 rounded-lg text-blue-700 border-2 border-blue-700 text-xs sm:text-sm font-medium flex justify-center items-center"
@@ -204,106 +204,20 @@ export default function Home() {
                         href="https://goo.gl/maps/Xt7r1SfPsJRhZevE6"
                         target="_blank"
                       >
-                        <Image
-                          src={location}
-                          width={20}
-                          height={20}
-                          alt="location"
-                          className="mr-2"
-                          loading="lazy"
-                        />{" "}
-                        See on Map
+                        <Box className="mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 48 48">
+                          <path fill="#48b564" d="M35.76,26.36h0.01c0,0-3.77,5.53-6.94,9.64c-2.74,3.55-3.54,6.59-3.77,8.06	C24.97,44.6,24.53,45,24,45s-0.97-0.4-1.06-0.94c-0.23-1.47-1.03-4.51-3.77-8.06c-0.42-0.55-0.85-1.12-1.28-1.7L28.24,22l8.33-9.88	C37.49,14.05,38,16.21,38,18.5C38,21.4,37.17,24.09,35.76,26.36z"></path><path fill="#fcc60e" d="M28.24,22L17.89,34.3c-2.82-3.78-5.66-7.94-5.66-7.94h0.01c-0.3-0.48-0.57-0.97-0.8-1.48L19.76,15	c-0.79,0.95-1.26,2.17-1.26,3.5c0,3.04,2.46,5.5,5.5,5.5C25.71,24,27.24,23.22,28.24,22z"></path><path fill="#2c85eb" d="M28.4,4.74l-8.57,10.18L13.27,9.2C15.83,6.02,19.69,4,24,4C25.54,4,27.02,4.26,28.4,4.74z"></path><path fill="#ed5748" d="M19.83,14.92L19.76,15l-8.32,9.88C10.52,22.95,10,20.79,10,18.5c0-3.54,1.23-6.79,3.27-9.3	L19.83,14.92z"></path><path fill="#5695f6" d="M28.24,22c0.79-0.95,1.26-2.17,1.26-3.5c0-3.04-2.46-5.5-5.5-5.5c-1.71,0-3.24,0.78-4.24,2L28.4,4.74	c3.59,1.22,6.53,3.91,8.17,7.38L28.24,22z"></path>
+                        </svg>
+                        </Box>
+                        Locate on Map
                       </a>
                     </div>
-                    <Image
-                      src={downArrow}
-                      alt="arrow"
-                      width={40}
-                      height={40}
-                      className="animate-bounce"
-                      loading="lazy"
-                    />
                   </div>
                 </div>
               </div>
               {/* adding onfo  */}
               <div className="flex flex-col justify-start items-center p-4 bg-white mb-5 mt-[22rem] sm:mt-[10rem]">
-{/*                 <div className="w-full sm:w-[80%] lg:w-[60%] py-4 sm:py-8 px-6 sm:px-8 shadow-lg rounded-lg my-3 flex flex-col justify-between items-start">
-                  <p className="text-lg font-medium text-black text-left mb-3">
-                    Please provide your feedback
-                  </p>
-                  <input
-                    type="text"
-                    className={`w-full px-3 py-3 rounded-lg border border-blue-600 text-base font-medium text-black my-2 focus:outline-none ${poppins.className}`}
-                    placeholder={"Your name"}
-                    onChange={(e) => {
-                      setName(e.target.value);
-                    }}
-                    value={name}
-                  />
-                  <input
-                    type="text"
-                    className={`w-full px-3 py-3 rounded-lg border border-blue-600 text-base font-medium text-black my-2 focus:outline-none ${poppins.className}`}
-                    placeholder={"Your message to us"}
-                    onChange={(e) => {
-                      setMessage(e.target.value);
-                    }}
-                    value={message}
-                  />
-                  <button
-                    className="w-full px-3 py-3 rounded-lg border bg-blue-600 text-sm font-medium text-white my-2 disabled:bg-neutral-500 disabled:text-white disabled:cursor-not-allowed"
-                    disabled={dis}
-                    onClick={async () => {
-                      if (name !== "" && message !== "") {
-                        setDis(true);
-                        const res = await fetch("/api/user", {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json",
-                          },
-                          body: JSON.stringify({
-                            userMessage: {
-                              name,
-                              message,
-                            },
-                          }),
-                        });
-                        const resData = await res.json();
-                        if (resData && resData.res.success) {
-                          notifications.show({
-                            title: "Success",
-                            message: "Thank you so much for you feedback",
-                            styles: (theme) => ({
-                              root: {
-                                backgroundColor: "#fff",
-                                borderColor: "rgb(37 99 235)",
-
-                                "&::before": {
-                                  backgroundColor: "rgb(37 99 235)",
-                                },
-                              },
-
-                              title: { color: "rgb(37 99 235)" },
-                              description: { color: "#2b2b2b" },
-                              closeButton: {
-                                color: "#000",
-                                "&:hover": {
-                                  backgroundColor: "rgb(37 99 235)",
-                                },
-                              },
-                            }),
-                          });
-                          setDis(false);
-                        } else {
-                          setDis(false);
-                        }
-                      }
-                    }}
-                  >
-                    Submit
-                  </button>
-                </div> */}
-                <div
+                {/* <div
                   className={`text-xs w-full flex justify-center items-center px-4 bg-neutral-200 py-3 rounded-lg text-neutral-700 mb-3 text-center font-medium leading-5 mt-4`}
                 >
                   This website is currently under development We will launch the
@@ -323,7 +237,7 @@ export default function Home() {
                   not feel any discomfort here. Please tell us your opinions on
                   so that we can get enough encouragement and also tell us what
                   you expect from our website.
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
