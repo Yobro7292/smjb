@@ -1,0 +1,38 @@
+.modal-main-body{
+    font-family: 'Montserrat'  !important;
+    min-height: 75vh;
+    background-color: #222233;
+    padding: 0px;
+}
+.tab-panel {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin-top: 10px;
+    font-family:'Montserrat';
+}
+.bottom-buttons{
+    .mantine-Button-root{
+        color: #87FBFC;
+        border: 1px solid #87FBFC;
+        font-weight: 400;
+        font-family:'Montserrat';
+        font-size: 12px;
+    }
+}
+.chat-input-holder{
+    margin-top: 20px;
+    width: 100%;
+    .chat-input-box{
+        width: 80%;
+    }
+}
+.mantine-Modal-body{
+    background-color: #222233;
+}
+.mantine-Tabs-tabsList{
+    border-bottom: 1px solid #ffffff33;
+}

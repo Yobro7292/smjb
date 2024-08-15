@@ -8,12 +8,13 @@ import {
   Burger,
   rem,
   Drawer,
+  Box,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Logo from "@/assets/svg/logo.svg";
 import { BiChevronDown } from "react-icons/bi";
 import Image from "next/image";
-import NavDrawer from "@/components/NavDrawer/Index";
+import NavDrawer from "@/app/_components/NavDrawer/Index";
 import { ReactNode } from "react";
 import Link from "next/link";
 
@@ -141,11 +142,11 @@ const Navbar = ({ links }: HeaderSearchProps) => {
         />
         </Link>
 
-        <Group spacing={5} className={classes.links}>
+        <Group spacing={5} className={classes.links} position="right">
           {items}
         </Group>
  
-        <div className="w-full flex sm:hidden" style={{ justifyContent: "end" }}>
+        {/* <Box className="w-full flex" style={{ justifyContent: "end" }}>
           <Burger
             opened={opened}
             onClick={toggle}
@@ -162,7 +163,7 @@ const Navbar = ({ links }: HeaderSearchProps) => {
           >
             <NavDrawer links={links} />
           </Drawer>
-        </div>
+        </Box> */}
       </div>
     </Header>
   );

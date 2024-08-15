@@ -1,5 +1,4 @@
 import { poppins } from "./font";
-import "./globals.css";
 
 export const metadata = {
   title: "Shree Mahuva Jain Bhojanshala",
@@ -12,9 +11,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={poppins.className}>
-      <body>
-        {children}
+    <html lang="en">
+      <body className={poppins.className}>
+          {children}
       </body>
     </html>
   );

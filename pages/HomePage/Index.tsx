@@ -1,16 +1,16 @@
-import { HeroImageRight } from "@/components/Hero/Index"
-import Service from "@/components/Service/Index"
-import Management from "@/components/Management/Index"
-import Testimonials from "@/components/Testimonials/Index"
-import Counter from "@/components/Counter/Index"
+import { HeroImageRight } from "@/app/_components/Hero/Index"
+import Service from "@/app/_components/Service/Index"
+import Management from "@/app/_components/Management/Index"
+import Testimonials from "@/app/_components/Testimonials/Index"
+import Counter from "@/app/_components/Counter/Index"
 const HomePage = () => {
   return (
     <>
-    <HeroImageRight />
+    {/* <HeroImageRight />
     <Service />
     <Management />
     <Testimonials />
-    <Counter />
+    <Counter /> */}
     </>
   )
 }

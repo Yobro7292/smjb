@@ -1,4 +1,4 @@
-import { FaqSimple } from "@/components/FAQ/Index"
+import { FaqSimple } from "@/app/_components/FAQ/Index"
 const FaqPage = () => {
   return (
     <>
