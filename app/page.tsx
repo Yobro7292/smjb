@@ -17,6 +17,16 @@ import outdoor2 from "../assets/images/outdoor2.webp";
 import outdoor3 from "../assets/images/outdoor3.webp";
 import arial1 from "../assets/images/arial1.webp";
 import hall1 from "../assets/images/hall1.webp";
+import ground_1 from "../assets/images/ground_1.webp";
+import ground_2 from "../assets/images/ground_2.webp";
+import ground_hall1 from "../assets/images/ground_hall1.webp";
+import ground_hall2 from "../assets/images/ground_hall2.webp";
+import ground_hall3 from "../assets/images/ground_hall3.webp";
+import ground_hall4 from "../assets/images/ground_hall4.webp";
+import inner_hall1 from "../assets/images/inner_hall1.webp";
+import inner_hall2 from "../assets/images/inner_hall2.webp";
+import left_ground_hall1 from "../assets/images/left_ground_hall1.webp";
+
 import verifiedIcon from "../assets/svg/verified.svg";
 import star from "../assets/svg/star.svg";
 import halfStar from "../assets/svg/half-star.svg";
@@ -35,10 +45,18 @@ const caraosulImages = [
   room2,
   room3,
   outdoor1,
-  outdoor2,
+  ground_hall1,
+  ground_hall2,
+  left_ground_hall1,
   outdoor3,
   bhojan1,
+  inner_hall1,
+  inner_hall2,
   bhojan2,
+  ground_1,
+  ground_2,
+  ground_hall3,
+  ground_hall4,
   hall1,
   arial1,
 ];
@@ -101,7 +119,7 @@ export default function Home() {
                 })}
               </Carousel>
               <div className="w-full flex flex-col justify-center items-center relative">
-                <div className="bg-white shadow-2xl rounded-lg sm:rounded-xl w-[90%] lg:w-[80%] xl:w-[60%] h-[26rem] sm:h-[17rem] -mt-8 absolute -top-14 sm:top-auto flex flex-col justify-start px-4 lg:px-10 py-2">
+                <div className="bg-white shadow-2xl rounded-lg sm:rounded-xl w-[90%] lg:w-[80%] xl:w-[60%] h-[24rem] sm:h-[17rem] mt-0 absolute -top-20 sm:top-auto sm:mt-[106px] flex flex-col justify-start px-4 lg:px-10 py-2">
                   <p className="text-blue-500 flex items-center text-xs mt-4">
                     <Image
                       src={verifiedIcon}
@@ -166,8 +184,8 @@ export default function Home() {
                       <span className=" sm:mt-2"> &nbsp; (201)</span>
                     </div>
                   </div>
-                  <div className="flex flex-col justify-center items-center w-full mt-6">
-                    <div className="w-full flex flex-col sm:flex-row justify-start  sm:justify-between items-start sm:items-center py-2 my-4">
+                  <div className="flex flex-col justify-center items-center w-full mt-2">
+                    <div className="w-full flex flex-col sm:flex-row justify-start  sm:justify-between items-start sm:items-center py-0 mt-2">
                       <a
                         className="px-5 py-3 w-full sm:w-auto my-1 sm:my-0 rounded-lg text-blue-700 border-2 border-blue-700 text-xs sm:text-sm font-medium flex justify-center items-center"
                         href="tel:02844222259"
@@ -216,7 +234,7 @@ export default function Home() {
                 </div>
               </div>
               {/* adding onfo  */}
-              <div className="flex flex-col justify-start items-center p-4 bg-white mb-5 mt-[22rem] sm:mt-[10rem]">
+              {/* <div className="flex flex-col justify-start items-center p-4 bg-white mb-5 mt-[22rem] sm:mt-[10rem]"> */}
                 {/* <div
                   className={`text-xs w-full flex justify-center items-center px-4 bg-neutral-200 py-3 rounded-lg text-neutral-700 mb-3 text-center font-medium leading-5 mt-4`}
                 >
@@ -238,7 +256,7 @@ export default function Home() {
                   so that we can get enough encouragement and also tell us what
                   you expect from our website.
                 </div> */}
-              </div>
+              {/* </div> */}
             </div>
           </div>
         </MantineProvider>
